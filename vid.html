@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching Video - E-Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+                /*EMBEDDED CSS AND JS */
+    .video-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      background: #000;
+      margin: 0 auto;
+    }
+    
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .video-description {
+      margin-top: 25px;
+      color: #555;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+    
+    .video-meta {
+      margin-top: 15px;
+      color: #777;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .video-container {
+        padding: 20px 15px;
+      }
+      
+      .video-meta {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio-label">Teaching Demonstration</div>
+
+  <div class="video-container">
+    <h1>Teaching Video</h1>
+    
+    <div class="video-wrapper">
+      <video controls poster="../images/video-poster.jpg">
+        <source src="VID.html.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+    
+    <div class="video-meta">
+      <span><i class="fas fa-chalkboard-teacher"></i> Subject: IT</span>
+    </div>
+    
+   
+    <div class="nav-back">
+      <a href="main.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+  </div>
+
+  <script>
+   
+    const video = document.querySelector('video');
+    
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        video.pause();
+      }
+    });
+  </script>
+</body>
+</html>

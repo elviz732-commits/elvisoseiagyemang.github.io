@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Gallery - E-Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+
+                <!-- css and js in one file-->
+  <style>    
+    .gallery-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    
+    .slideshow-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    
+    .mySlides {
+      display: none;
+      text-align: center;
+    }
+    
+    .mySlides img {
+      max-height: 500px;
+      width: auto;
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    
+    .slide-caption {
+      padding: 15px;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+    
+    
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.3s;
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 0 5px 5px 0;
+      user-select: none;
+    }
+    
+    .next {
+      right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+    
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    
+    .thumbnail-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .thumbnail {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+    
+    .thumbnail:hover, .active-thumbnail {
+      opacity: 1;
+      border-color: #3498db;
+    }
+    
+    
+    .fade {
+      animation-name: fade;
+      animation-duration: 1s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="gallery-container">
+    <h1>Personal Pictures</h1>
+    
+    <div class="slideshow-container">
+      <!-- Slide 1 -->
+      <div class="mySlides fade">
+        <img src="../images/pictures/1.jpg" alt="Personal Photo 1">
+        
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="mySlides fade">
+        <img src="../images/pictures/2.jpg" alt="Personal Photo 2">
+        
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="mySlides fade">
+        <img src="../images/pictures/3.jpg" alt="Personal Photo 3">
+        
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="../images/pictures/4.jpg" alt="Personal Photo 4">
+        
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="../images/pictures/5.jpg" alt="Personal Photo 5">
+        
+      </div>
+
+      <div class="mySlides fade">
+        <img src="../images/pictures/6.jpg" alt="Personal Photo 6">
+        
+      </div>
+
+
+      <!-- Navigation arrows -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <div class="nav-back">
+      <a href="main.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+  </div>
+
+                    <!-- JAVASCRIPT FILE  -->
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let thumbnails = document.getElementsByClassName("thumbnail");
+      
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      
+ 
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+            
+      slides[slideIndex-1].style.display = "block";
+      thumbnails[slideIndex-1].className += " active-thumbnail";
+    }
+    
+    let autoSlide = setInterval(() => plusSlides(1), 5000);
+    
+ 
+    document.querySelector('.slideshow-container').addEventListener('mouseenter', () => {
+      clearInterval(autoSlide);
+    });
+    
+    document.querySelector('.slideshow-container').addEventListener('mouseleave', () => {
+      autoSlide = setInterval(() => plusSlides(1), 5000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+ body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .scheme-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .scheme-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .scheme-item {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .scheme-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .scheme-icon {
+      font-size: 24px;
+      color: #3498db;
+      margin-right: 15px;
+    }
+    
+    .scheme-details {
+      flex: 1;
+    }
+    
+    .scheme-title {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+    
+    .scheme-description {
+      color: #7f8c8d;
+      font-size: 14px;
+    }
+    
+    .download-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s;
+    }
+    
+    .download-btn:hover {
+      background-color: #2980b9;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .back-link:hover {
+      text-decoration: underline;
+    }

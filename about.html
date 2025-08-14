@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About -E-Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    p{
+        color: black;
+    }
+
+    h2{
+        color: black;
+    }
+    .about-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #3498db;
+    }
+    
+    .dual-expertise {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .expertise-card {
+      flex: 1;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+    }
+    
+    .expertise-card h3 {
+      color: #3498db;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    
+    .programmer {
+      border-top: 4px solid #e74c3c;
+    }
+    
+    .trader {
+      border-top: 4px solid #2ecc71;
+    }
+    
+    .icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio-label">About Me</div>
+
+  <div class="about-container">
+    
+    
+    <div class="profile-header">
+      <img src="../images/elvpic.jpg" alt="Elvis Osei Agyemang" class="profile-pic">
+      <div>
+        <h2>ELVIS OSEI AGYEMANG</h2>
+        <p><i class="fas fa-map-marker-alt icon"></i> Ghana</p>
+        <p><i class="fas fa-envelope icon"></i> elviz732@gmail.com</p>
+        <p><i class="fas fa-phone icon"></i> +233 54 953 8653</p>
+      </div>
+    </div>
+    
+    <div class="dual-expertise">
+      <div class="expertise-card programmer">
+        <h3><i class="fas fa-code icon"></i>Programmer</h3>
+        <p>Full-stack developer specializing in web technologies with experience in multiple programming languages and frameworks. Passionate about creating efficient, scalable solutions and continuously expanding my technical skillset.</p>
+        <p><strong>Technical Skills:</strong> JavaScript, Python, HTML/CSS, React, Node.js</p>
+      </div>
+      
+      <div class="expertise-card trader">
+        <h3><i class="fas fa-chart-line icon"></i>Forex Trader</h3>
+        <p>Disciplined trader with expertise in technical analysis and risk management. Focused on currency markets with a systematic approach to trading that emphasizes consistency and capital preservation.</p>
+        <p><strong>Trading Style:</strong> Swing trading with technical indicators and price action analysis</p>
+      </div>
+    </div>
+    
+    <div class="nav-back">
+      <a href="main.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+  </div>
+</body>
+</html>

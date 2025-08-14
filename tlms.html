@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TLMs - E-Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+
+    /* css and js in one file */
+    .tlms-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    
+    .slideshow {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    
+    .tlm-slide {
+      display: none;
+      text-align: center;
+      animation: fade 1s ease;
+    }
+    
+    .tlm-slide img {
+      max-height: 500px;
+      max-width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .slide-caption {
+      padding: 15px;
+      color: #2c3e50;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    
+    .nav-arrow {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+    
+    .nav-arrow:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    .prev {
+      left: 20px;
+    }
+    
+    .next {
+      right: 20px;
+    }
+    
+    @keyframes fade {
+      from {opacity: 0.4}
+      to {opacity: 1}
+    }
+    
+    
+    .dot-container {
+      text-align: center;
+      padding: 15px;
+    }
+    
+    .dot {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tlms-container">
+    <h1>Teaching Materials</h1>
+    
+    <div class="slideshow">
+      <!-- Slide 1 -->
+      <div class="tlm-slide">
+        <img src="../images/Tlms/1.jpg" alt="TLM Material 1">
+        <div class="slide-caption">Visual Teaching Aid</div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="tlm-slide">
+        <img src="../images/Tlms/2.jpg" alt="TLM Material 2">
+        <div class="slide-caption">Teaching Aid</div>
+      </div>
+      
+      
+      <a class="nav-arrow prev" onclick="changeSlide(-1)">❮</a>
+      <a class="nav-arrow next" onclick="changeSlide(1)">❯</a>
+    </div>
+    
+    
+    <div class="nav-back">
+      <a href="main.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.tlm-slide');
+    
+    
+    showSlide(currentSlide);
+    
+    
+    function changeSlide(n) {
+      showSlide(currentSlide += n);
+    }
+    
+    function showSlide(n) {
+      if (n >= slides.length) currentSlide = 0;
+      if (n < 0) currentSlide = slides.length - 1;
+      
+      slides.forEach(slide => {
+        slide.style.display = "none";
+      });
+      
+      
+      slides[currentSlide].style.display = "block";
+    }
+    setInterval(() => changeSlide(1), 5000);
+  </script>
+</body>
+</html>
